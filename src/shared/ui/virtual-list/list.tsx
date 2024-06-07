@@ -36,7 +36,7 @@ const VirtualizedList:FC<IProps> = (props) => {
     const onScroll = (e:React.UIEvent<HTMLDivElement>) => setScrollTop(e.currentTarget.scrollTop);
 
     return (
-        <div className={className} style={{ overflowY: "scroll" }} onScroll={onScroll}>
+        <div className={className} style={{ overflowY: "auto" }} onScroll={onScroll}>
             <div
                 style={{ position: "relative", height: `${innerHeight}px` }}
             >

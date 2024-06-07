@@ -31,6 +31,7 @@ const Menu = ()=>{
 
     const handleRenderCoins = (coins:string[])=>{
         const filteredCoins = handleFilterCoins(coins)
+        if(!filteredCoins.length) return <div className = {styles["warning"]}>List is empty</div>
         return (
             <VirtualizedList
                 className={styles["list"]}
@@ -55,18 +56,16 @@ const Menu = ()=>{
                     value = {query}
                     onChange = {(e:React.ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)}
                     placeholder = "Search..."
-                    startIcon={<button className={styles["iconButton"]}>
-                        <IoIosSearch className={styles["icon"]}/>
-                    </button>}
+                    startIcon={<IoIosSearch className={styles["icon"]}/>}
                     endIcon={
-                        <button onClick={()=>setQuery("")} className={styles["iconButton"]}>
+                        !!query.length && <button onClick={()=>setQuery("")} className={styles["iconButton"]}>
                             <IoIosClose className={styles["icon"]}/>
                         </button>
                     }/>
             </div>
             <div className={styles["tab"]}>
-                <div onClick={()=>setTab("fav")} className={clsxConcat(styles["tabItem"], tab === "fav" && styles["activeTab"])}><MdOutlineFavorite/> Favourites</div>
-                <div onClick={()=>setTab("all")} className={clsxConcat(styles["tabItem"], tab === "all" && styles["activeTab"])}>All coins</div>
+                <button disabled={tab === "fav"} onClick={()=>setTab("fav")} className={clsxConcat(styles["tabItem"], tab === "fav" && styles["activeTab"])}><MdOutlineFavorite/> Favourites</button>
+                <button disabled={tab === "all"} onClick={()=>setTab("all")} className={clsxConcat(styles["tabItem"], tab === "all" && styles["activeTab"])}>All coins</button>
             </div>
             {handleRenderCoins(tab === "all" ? coins : favCoins)}
         </div>

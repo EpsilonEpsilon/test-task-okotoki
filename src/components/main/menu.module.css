@@ -21,10 +21,7 @@
 
 
 .searchContainer{
-    padding: 5px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    padding: 5px 10px;
     border-bottom: 1px solid #333;
 }
 
@@ -36,12 +33,18 @@
 
 .listItem{
     all:unset;
+    user-select: none;
+    cursor: pointer;
     box-sizing: border-box;
-    padding: 10px 20px;
+    padding: 10px;
     width: 100%;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.listItem:hover{
+    background: #444;
 }
 
 .list::-webkit-scrollbar {
@@ -51,12 +54,13 @@
 
 /* Track */
 .list::-webkit-scrollbar-track {
-    background: #000;
+    background: transparent;
 }
 
 /* Handle */
 .list::-webkit-scrollbar-thumb {
     background: #fff;
+    border-radius: 5px;
 }
 
 
@@ -67,15 +71,17 @@
 }
 
 .tabItem{
+    all: unset;
+    margin: 5px;
+    user-select: none;
     opacity: 0.7;
     gap: 5px;
     text-transform: uppercase;
     font-size: 15px;
-    padding: 5px 10px;
+    padding: 5px;
     transition: .2s linear;
     cursor: pointer;
     border-radius: 10px;
-    margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,5 +92,16 @@
 }
 
 .activeTab{
+    cursor: default;
     opacity: 1;
+}
+
+
+.warning{
+    user-select: none;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }

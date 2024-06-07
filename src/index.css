@@ -1,0 +1,13 @@
+:root{
+    --main-bg-color:#000804;
+    --yellow-color:#FFF50F;
+}
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    background: var(--main-bg-color);
+    color: #fff;
+}

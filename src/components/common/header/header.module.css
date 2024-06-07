@@ -1,0 +1,21 @@
+.container{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container{
+    display: flex;
+    align-content: center;
+    gap: 10px;
+}
+
+.button{
+    transition: .2s linear;
+    margin:0  auto;
+}
+
+.button:active{
+   transform: scale(0.9);
+}

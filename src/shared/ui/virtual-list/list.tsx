@@ -27,7 +27,6 @@ const VirtualizedList:FC<IProps> = (props) => {
                  {
                     position: "absolute",
                     top: `${i * itemHeight}px`,
-                    width: "100%"
                 }
     )
         );
